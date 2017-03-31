@@ -2,17 +2,17 @@
 <meta charset="utf-8">
 <style>
   body, html {
-    width:100%;
-    height:100%;
+    width:98%;
+    height:95%;
   }
   #vizcontainer {
     width:100%;
     height:100%;
   }
-  svg {
+/*  svg {
     width: 100%;
     height: 100%;
-  }
+  }*/
 
 form {
     position: absolute;
@@ -149,15 +149,15 @@ function pop_chart(recs) {
             });
         });
 
-    var svg = d3.select("svg").style("width", "98%").style("height", "90%");
+    var svg = d3.select("svg").style("width", "100%").style("height", "100%");
     var margin = {
             top: 20,
-            right: 20,
+            right: 40,
             bottom: 40,
-            left: 0
+            left: 40
         },
         screenHeight = parseFloat(d3.select("svg").node().clientHeight || d3.select("svg").node().parentNode.clientHeight);
-    screenWidth = parseFloat(d3.select("svg").node().clientWidth || d3.select("svg").node().parentNode.clientWidth);
+    screenWidth = parseFloat(d3.select("svg").node().clientWidth - margin.right || d3.select("svg").node().parentNode.clientWidth);
 
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
